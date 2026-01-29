@@ -12,6 +12,17 @@ $(document).ready(function(){
 		$('#'+id_target).show()
 	})
 	init()
+
+	// Handle local file upload for CCD XML
+	$('#localfileinput').on('change', function(e) {
+		var file = e.target.files[0];
+		if (!file) return;
+		var reader = new FileReader();
+		reader.onload = function(evt) {
+			$('#cdaxml').val(evt.target.result);
+		};
+		reader.readAsText(file);
+	});
 	$('#ghrepos').click(function(){
 		ghowner=$('#ghowner').val()
 		var url='https://api.github.com/users/'+ghowner+'/repos?sort=asc';
