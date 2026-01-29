@@ -15,7 +15,6 @@ Users can hide, collapse and move any section of a CDA document.
 
 <p>All this using simple deployment via a local fileset or web server (and its very pretty).</p>
 <p>Sample documents are included in the deployment. Any C-CDA document can be rendered via cut and paste of the document text.</p>
-<p>Winner of the <a href="http://blog.hl7.org/hl7ccdachallenge" target="_blank">HL7 C-CDA Tooling Challenge</a></p>
 
 <h2>Platform</h2>
 <ul>
@@ -26,7 +25,7 @@ Users can hide, collapse and move any section of a CDA document.
 
 <h2>Demonstration</h2>
 A demonstration version is deployed here:
-http://brynlewis.org/challenge/index.htm
+https://tamu-edu.github.io/dho-cda-viewer/
 
 <h2>Features</h2>
 <ul>
