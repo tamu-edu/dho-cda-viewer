@@ -193,22 +193,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(100, 100, 100
 span.tocup,span.tocdown{
 	padding:0.5em;
 }
-.intelsoft{
-	display:block;width:100%;padding-left:1em;float:left;font-weight:bold;
-	color:#1f8dd6;
-	font-size:1em;padding-top:0.2em;padding-bottom:0.5em;text-decoration:none;
-	background:white;
-	border-top:2px solid transparent;
-	margin-top:0.5em;
-}
-.intelsoft:hover{
-	border-top:2px solid #1f8dd6;
-}
-.intelsoft:hover::after{
-	content:' http://intelsoft.com.au ';
-	float:right;
-	padding-right:1em;
-}
 #cdabody{
 	padding-left:0.5em;
 }
