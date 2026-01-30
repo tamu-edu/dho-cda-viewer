@@ -7,110 +7,19 @@
 *{
 box-sizing: border-box;
 }
-html {
-	margin: 0;
+html{
+  margin:0;
 }
 body {
-	color: #222;
-	font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 90%;
-	margin: 0;
-	background: #f8f8f8;
-}
+  color: #003366;
+  
+  font-family: Verdana, Tahoma, sans-serif;
+  font-family: "Open Sans",Arial, "Trebuchet MS";
 
-/* TAMU Header Styles */
-.tamu-header {
-	width: 100%;
-	background: #500000;
-	color: #fff;
-	margin-bottom: 2em;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.tamu-header-bar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0.5em 1.5em;
-}
-.tamu-logo {
-	display: inline-block;
-	width: 60px;
-	height: 60px;
-	background: url('https://brandguide.tamu.edu/assets/downloads/SpiritMark/TAM-Logo-Stacked-White.svg') no-repeat center center;
-	background-size: contain;
-	margin-right: 1.5em;
-}
-.tamu-title {
-	font-size: 2em;
-	font-weight: 700;
-	letter-spacing: 1px;
-	flex: 1;
-}
-
-/* Button Styles */
-.pure-button, .pure-button:visited, label.pure-button {
-	background: #500000;
-	color: #fff !important;
-	border: none;
-	border-radius: 3px;
-	font-weight: 600;
-	font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	transition: background 0.2s, color 0.2s;
-	box-shadow: 0 2px 4px rgba(80,0,0,0.08);
-}
-.pure-button:hover, label.pure-button:hover {
-	background: #7a1414;
-	color: #fff !important;
-}
-
-input[type="file"]:focus + label.pure-button,
-label.pure-button:focus {
-	outline: 2px solid #500000;
-}
-
-/* Section and Card Styles */
-div.section {
-	border: 1px solid #a3a3a3;
-	background: #fff;
-	box-shadow: 0 2px 8px rgba(80,0,0,0.06);
-}
-
-/* Headings */
-h1, h2, h3, h4, h5 {
-	font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color: #500000;
-	font-weight: 700;
-}
-
-/* Table Styles */
-table {
-	background: #fff;
-	border: 1px solid #a3a3a3;
-}
-th, td {
-	border: 1px solid #d1d1d1;
-	padding: 0.5em 1em;
-}
-th {
-	background: #f3e5e5;
-	color: #500000;
-}
-
-/* Misc */
-a {
-	color: #500000;
-	text-decoration: underline;
-}
-a:hover {
-	color: #7a1414;
-}
-
-/* File input label fix */
-label.pure-button[for="localfileinput"] {
-	margin-bottom: 1em;
-	margin-right: 1em;
+  font-size: 80%;
+  margin:0;
+  background:#EEEEEE;
+  background-color: #E3F4FF;
 }
 table{
 	font-family: Verdana, Tahoma, sans-serif;
