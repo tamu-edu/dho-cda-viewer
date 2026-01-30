@@ -63,39 +63,13 @@
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different
  */
-
-/* OVERRIDE: Ensure TAMU button styles from cda.css take precedence */
-.pure-button, .pure-button:visited, label.pure-button, .tamu-btn {
-    background: #500000 !important;
-    color: #fff !important;
-    border: 2px solid #500000 !important;
-    border-radius: 4px !important;
-    font-weight: 600 !important;
-    font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-    font-size: 1em !important;
-    padding: 0.5em 1.5em !important;
-    cursor: pointer !important;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
-    box-shadow: 0 2px 4px rgba(80,0,0,0.08) !important;
-    outline: none !important;
-    text-align: center !important;
-    display: inline-block !important;
-}
-.pure-button:hover, label.pure-button:hover, .tamu-btn:hover {
-    background: #7a1414 !important;
-    color: #fff !important;
-    border-color: #7a1414 !important;
-}
-.pure-button:focus, label.pure-button:focus, .tamu-btn:focus {
-    outline: 2px solid #ffb81c !important;
-    background: #7a1414 !important;
-    color: #fff !important;
-    border-color: #ffb81c !important;
-}
-.pure-button:active, label.pure-button:active, .tamu-btn:active {
-    background: #3a0000 !important;
-    color: #fff !important;
-    border-color: #3a0000 !important;
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+	border: 1px solid #1f8dd6;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(100, 100, 100, 0.3);
 }
 
 a.pure-button-primary {
