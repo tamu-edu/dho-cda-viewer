@@ -1,3 +1,9 @@
+/* Style for file input to match pure-button */
+#localfileinput + .filename {
+	margin-left: 1em;
+	font-style: italic;
+	color: #0078e7;
+}
 *{
 box-sizing: border-box;
 }

@@ -63,7 +63,10 @@
 				<div class=" cdaview"  id="inputcda" style="padding:1em;">
 					<div style="margin:0.5em">
 						<p><b>Upload a CCD XML file from your computer:</b></p>
-						<input type="file" id="localfileinput" accept=".xml,text/xml,application/xml" style="margin-bottom:1em;" />
+						<label for="localfileinput" class="pure-button" style="margin-bottom:1em;">
+							<i class="fa fa-upload"></i> Choose File
+						</label>
+						<input type="file" id="localfileinput" accept=".xml,text/xml,application/xml" style="display:none;" />
 <ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xmlns:sdtc=&quot;urn:hl7-org:sdtc&quot; xmlns:cda=&quot;urn:hl7-org:v3&quot;>"
 						<p style="">Paste your C-CDA document below<p>
 					</div>
