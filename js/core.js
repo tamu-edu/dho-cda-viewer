@@ -1,3 +1,54 @@
+// Initialize layout, drag-and-drop, and section state
+function init() {
+	var cdabody = $('#cdabody');
+	if (!cdabody.length) return;
+
+	// Initialize Packery grid
+	cdabody.packery({
+		stamp: '.stamp',
+		columnWidth: 'div.section:not(.narr_table)',
+		itemSelector: 'div.section',
+		gutter: 10,
+		transitionDuration: '0.2s'
+	});
+
+	// Make sections draggable
+	cdabody.find('div.section:not(.recordTarget)').each(function(i, gridItem) {
+		var draggie = new Draggabilly(gridItem);
+		cdabody.packery('bindDraggabillyEvents', draggie);
+	});
+
+	// Restore section order from localStorage
+	if (typeof localStorage.firstsection !== 'undefined') {
+		var firstsection = localStorage.firstsection.split(',');
+		for (var i = firstsection.length - 1; i >= 0; i--) {
+			if (firstsection[i]) {
+				var section = $('.section[data-code="' + firstsection[i] + '"]');
+				var li = $('.toc[data-code="' + section.attr('data-code') + '"]');
+				if (section.length && li.length) {
+					section.parent().prepend(section);
+					li.parent().prepend(li);
+				}
+			}
+		}
+	}
+
+	// Restore hidden sections from localStorage
+	if (typeof localStorage.hidden !== 'undefined') {
+		var hidden = localStorage.hidden.split(',');
+		for (var j = 0; j < hidden.length; j++) {
+			if (hidden[j]) {
+				var hsection = $('.section[data-code="' + hidden[j] + '"]');
+				hsection.hide();
+				$('.toc[data-code="' + hidden[j] + '"]').addClass('hide');
+			}
+		}
+	}
+
+	// Reflow grid
+	cdabody.packery('reloadItems');
+	cdabody.packery();
+}
 var cdaxml='';
 var hidden=new Array();
 var firstsection=new Array();
