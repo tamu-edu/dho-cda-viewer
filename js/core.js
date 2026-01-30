@@ -198,16 +198,15 @@ function loadcontents(data,reponame,owner,path){
 		else{
 			cdaxml=$('#cdaxml').val()
 		}
-		
-		//jquery $('#viewcda').xslt(cdaxml, './cda.xsl');
-		
-		new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
-		//$('#inputcda').hide(function(){
-			//$('#viewcda').show(function(){
-				//init()
-				//$('#inputcdabtn').show()
-			//})
-		//})
+		if (!cdaxml || cdaxml.trim() === "") {
+			alert("Please provide a C-CDA XML document before viewing.");
+			return;
+		}
+		try {
+			new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
+		} catch (e) {
+			alert("Transformation failed: " + (e.message || e));
+		}
 	})
 	$('i.delete').click(function(){
 		var section=$(this).closest('div.section')
