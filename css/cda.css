@@ -50,24 +50,43 @@ body {
 }
 
 /* Button Styles */
-.pure-button, .pure-button:visited, label.pure-button {
+
+/* TAMU Button Styles */
+.tamu-btn, .pure-button, .pure-button:visited, label.pure-button {
 	background: #500000;
 	color: #fff !important;
-	border: none;
-	border-radius: 3px;
+	border: 2px solid #500000;
+	border-radius: 4px;
 	font-weight: 600;
 	font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	transition: background 0.2s, color 0.2s;
+	font-size: 1em;
+	padding: 0.5em 1.5em;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 	box-shadow: 0 2px 4px rgba(80,0,0,0.08);
+	outline: none;
+	text-align: center;
+	display: inline-block;
 }
-.pure-button:hover, label.pure-button:hover {
+.tamu-btn:hover, .pure-button:hover, label.pure-button:hover {
 	background: #7a1414;
 	color: #fff !important;
+	border-color: #7a1414;
 }
-
+.tamu-btn:focus, .pure-button:focus, label.pure-button:focus {
+	outline: 2px solid #ffb81c;
+	background: #7a1414;
+	color: #fff !important;
+	border-color: #ffb81c;
+}
+.tamu-btn:active, .pure-button:active, label.pure-button:active {
+	background: #3a0000;
+	color: #fff !important;
+	border-color: #3a0000;
+}
 input[type="file"]:focus + label.pure-button,
 label.pure-button:focus {
-	outline: 2px solid #500000;
+	outline: 2px solid #ffb81c;
 }
 
 /* Section and Card Styles */
