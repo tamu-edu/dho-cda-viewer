@@ -52,13 +52,16 @@ function Transformation() {
     var xsltDoc;
 
     var callback = function() {
-		$('#inputcda').hide(function(){
-			$('#viewcda').show(function(){
-				init()
-				$('#inputcdabtn').show()
-			})
-		})
-	};
+        try {
+            $('#inputcda').hide();
+            $('#viewcda').show();
+            if (typeof init === 'function') init();
+            $('#inputcdabtn').show();
+        } catch (e) {
+            console.error('Transformation callback error:', e);
+            alert('Transformation completed, but there was a problem displaying the result. See console for details.');
+        }
+    };
     
     /**
      * Sort of like a fix for Opera who doesn't always get readyStates right.
