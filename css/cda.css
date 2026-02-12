@@ -122,20 +122,58 @@ div.section.is-positioning-post-drag {
   z-index: 2;
 }
 
-@media (min-width:400px){
-   .section{
-	   width:99%;
-   }
+
+/* --- Three-column layout: two columns for sections, one for TOC --- */
+#cdabody {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	width: 100%;
+	box-sizing: border-box;
 }
-@media (min-width:600px){
-   .section{
-	   width:49%;
-   }
+
+#cdabody_inner {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 0%;
+	gap: 1em;
+	align-items: flex-start;
 }
-@media (min-width:1000px){
-   .section{
-	   width:49%;
-   }
+
+div.section {
+	width: calc(50% - 0.5em);
+	min-width: 320px;
+	max-width: 100%;
+	margin-bottom: 1em;
+}
+
+#tocdiv {
+	min-width: 20em;
+	max-width: 22em;
+	width: 22em;
+	margin-left: 1em;
+	position: sticky;
+	top: 0;
+	align-self: flex-start;
+	z-index: 10;
+}
+
+@media (max-width: 1200px) {
+	#cdabody_inner {
+		flex-direction: column;
+	}
+	div.section {
+		width: 100%;
+	}
+	#tocdiv {
+		position: static;
+		width: 100%;
+		min-width: unset;
+		margin-left: 0;
+	}
+	#cdabody {
+		flex-direction: column;
+	}
 }
 
 .packery-drop-placeholder {
