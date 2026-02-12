@@ -123,19 +123,19 @@ div.section.is-positioning-post-drag {
 }
 
 @media (min-width:400px){
-   .section{
-	   width:99%;
-   }
+	.section{
+		width:99%;
+	}
 }
 @media (min-width:600px){
-   .section{
-	   width:49%;
-   }
+	.section{
+		width:48%;
+	}
 }
 @media (min-width:1000px){
-   .section{
-	   width:49%;
-   }
+	.section{
+		width:30em;
+	}
 }
 
 .packery-drop-placeholder {
