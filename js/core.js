@@ -580,3 +580,80 @@ var loaded = function() {
 		//$('#transform').get(0).click()
 	}
 }
+function searchAndExpand() {
+    const searchInput = document.getElementById('cda-search-input');
+    const query = searchInput.value.toLowerCase().trim();
+    
+    if (!query) return;
+
+    // Optional: Container where the C-CDA document is rendered
+    // If it's the whole body, use document.body
+    const container = document.getElementById('viewcda') || document.body; 
+
+    // Create a TreeWalker to search only through text nodes
+    const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+    );
+
+    let node;
+    let firstMatch = null;
+
+    while ((node = walker.nextNode())) {
+        if (node.nodeValue.toLowerCase().includes(query)) {
+            // We found a text match
+            const parentElement = node.parentElement;
+            
+            if (!firstMatch) {
+                firstMatch = parentElement;
+            }
+
+            // Find the main wrapper for this specific section
+            // TODO: Update '.cda-section' to whatever class wraps your collapsible sections
+            const section = parentElement.closest('.cda-section'); 
+
+            if (section) {
+                // Check if the section is collapsed
+                // TODO: Update this condition based on how core.js hides sections 
+                // (e.g., checking for a specific class or inline style)
+                const isCollapsed = section.classList.contains('collapsed-state'); 
+
+                if (isCollapsed) {
+                    // Trigger the expansion. The safest way is to simulate a click 
+                    // on the Font-Awesome expand icon so core.js and Packery handle 
+                    // the layout adjustments natively.
+                    // TODO: Update '.fa-plus' to the actual class of your expand icon
+                    const expandToggle = section.querySelector('.fa-plus'); 
+                    if (expandToggle) {
+                        expandToggle.click();
+                    } else {
+                        // Fallback if you toggle classes directly instead of clicking
+                        section.classList.remove('collapsed-state');
+                    }
+                }
+            }
+        }
+    }
+
+    // Scroll the very first match into view
+    if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Optional: Add a temporary CSS highlight to the found element
+        firstMatch.style.backgroundColor = 'yellow';
+        setTimeout(() => {
+            firstMatch.style.backgroundColor = '';
+        }, 2000);
+    } else {
+        alert('Text not found in the document.');
+    }
+}
+
+// Optional: Allow pressing "Enter" to trigger the search
+document.getElementById('cda-search-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        searchAndExpand();
+    } 
+});
