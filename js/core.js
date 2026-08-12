@@ -655,5 +655,5 @@ function searchAndExpand() {
 document.getElementById('cda-search-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         searchAndExpand();
-    }
+    } 
 });
