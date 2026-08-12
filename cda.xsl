@@ -74,6 +74,10 @@
    <!-- generate table of contents -->
    <xsl:template name="make-tableofcontents">
 		<div id="tocdiv" class="stamp">
+            <div class="custom-search-container">
+               <input type="text" id="cda-search-input" placeholder="Search document...">
+               <button onclick="searchAndExpand()">Search</button>
+            </div>
 			  <p id="tochead" class="h2" style="cursor:pointer;background:white;color:#1f8dd6;text-align:center;padding:0.25em">
 				Table of Contents
 				<i class="fa fa-bars fa-lg" style="margin-left:0.5em"></i>
